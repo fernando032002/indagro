@@ -470,7 +470,6 @@ body {
     transform: translateY(0);
 }
 
-
 /* =========================
    INFORMACIÓN SERVICIO
 ========================= */
@@ -564,7 +563,7 @@ body {
 
 
 /* =========================
-   PROMOCIÓN
+INFORMACION EN PROCESO
 ========================= */
 
 .promotion {
@@ -576,7 +575,7 @@ body {
         linear-gradient(
             135deg,
             #241d22,
-            #842491
+            #2d2491
         );
 
     color: #ffffff;
@@ -776,17 +775,13 @@ body {
 /* =========================
    CONTACTO
 ========================= */
-/* =========================
-CONTACTO
-========================= */
-
 .contact {
 padding: 120px 7%;
 
 background:
     linear-gradient(
         135deg,
-        #a9c8de,
+        #272c50,
         #8175ff
     );
 

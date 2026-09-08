@@ -37,7 +37,6 @@ navLinks.forEach(link => {
 
 });
 
-
 /* =========================
    SERVICIOS
 ========================= */
@@ -56,12 +55,15 @@ const serviceDescription =
 const serviceText =
     document.getElementById("serviceText");
 
+const serviceImage =
+    document.getElementById("serviceImage");
+
 const backServices =
     document.getElementById("backServices");
 
 
 /* =========================
-   INFORMACIÓN
+   INFORMACIÓN DE PRODUCTOS
 ========================= */
 
 const servicios = {
@@ -73,8 +75,11 @@ const servicios = {
         descripcion:
             "Soluciones para el control y manejo de sistemas eléctricos.",
 
+        imagen:
+            "img/control.jpg",
+
         informacion:
-            "Aquí puedes colocar la información detallada de los sistemas de control eléctrico que ofrece INDAGRO."
+            "."
 
     },
 
@@ -86,9 +91,11 @@ const servicios = {
         descripcion:
             "Servicios relacionados con sistemas de potencia eléctrica.",
 
-        informacion:
-            "Aquí puedes colocar información sobre instalaciones, mantenimiento y soluciones relacionadas con potencia eléctrica."
+        imagen:
+            "img/potencia.jpg",
 
+        informacion:
+            "."
     },
 
 
@@ -99,8 +106,11 @@ const servicios = {
         descripcion:
             "Soluciones y servicios especializados en sistemas hidráulicos.",
 
+        imagen:
+            "img/hidraulica.jpg",
+
         informacion:
-            "Aquí puedes colocar la información detallada sobre los equipos y soluciones hidráulicas que ofrece INDAGRO."
+            "."
 
     },
 
@@ -112,8 +122,11 @@ const servicios = {
         descripcion:
             "Implementación y mejora de sistemas automatizados.",
 
+        imagen:
+            "img/automatizacion.jpg",
+
         informacion:
-            "Aquí puedes colocar información sobre automatización industrial, control de procesos y sistemas automatizados."
+            "."
 
     },
 
@@ -125,8 +138,11 @@ const servicios = {
         descripcion:
             "Soluciones para sistemas y equipos neumáticos.",
 
+        imagen:
+            "img/neumatica.jpg",
+
         informacion:
-            "Aquí puedes colocar información sobre sistemas neumáticos, equipos, mantenimiento y soluciones especializadas."
+            "."
 
     }
 
@@ -134,7 +150,7 @@ const servicios = {
 
 
 /* =========================
-   CLIC EN SERVICIO
+   CLIC EN PRODUCTO
 ========================= */
 
 cards.forEach(card => {
@@ -153,18 +169,40 @@ cards.forEach(card => {
         }
 
 
+        /* TÍTULO */
+
         serviceTitle.textContent =
             servicio.titulo;
 
+
+        /* DESCRIPCIÓN */
+
         serviceDescription.textContent =
             servicio.descripcion;
+
+
+        /* INFORMACIÓN */
 
         serviceText.textContent =
             servicio.informacion;
 
 
-        serviceDetail.style.display = "block";
+        /* IMAGEN */
 
+        serviceImage.src =
+            servicio.imagen;
+
+        serviceImage.alt =
+            servicio.titulo;
+
+
+        /* MOSTRAR INFORMACIÓN */
+
+        serviceDetail.style.display =
+            "block";
+
+
+        /* DESPLAZAR HACIA LA INFORMACIÓN */
 
         setTimeout(() => {
 
@@ -184,14 +222,15 @@ cards.forEach(card => {
 
 
 /* =========================
-   REGRESAR A SERVICIOS
+   REGRESAR A PRODUCTOS
 ========================= */
 
 if (backServices) {
 
     backServices.addEventListener("click", () => {
 
-        serviceDetail.style.display = "none";
+        serviceDetail.style.display =
+            "none";
 
 
         document.getElementById("servicios")

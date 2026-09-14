@@ -132,39 +132,44 @@
             </article>
 
         </div>
+       <!-- =========================
+     DETALLE DEL PRODUCTO
+========================= -->
 
-        <!-- =========================
-             INFORMACIÓN DEL PRODUCTO
-        ========================== -->
+<div class="service-detail" id="serviceDetail">
 
-        <div class="service-detail" id="serviceDetail">
+    <h2 id="serviceTitle">Selecciona un producto</h2>
 
-            <h2 id="serviceTitle">
-                Selecciona un producto
-            </h2>
+    <p id="serviceDescription">
+        Haz clic en un producto para ver más información.
+    </p>
 
-            <p id="serviceDescription">
-                Haz clic para más información.
-            </p>
+    <!-- Imagen principal -->
+    <div class="product-main-image">
+        <img id="serviceImage"
+             src=""
+             alt="Imagen principal del producto">
+    </div>
 
-            <div class="service-content">
+    <!-- Galería de imágenes -->
+    <div class="product-gallery" id="productGallery"></div>
 
-                <h3>Información</h3>
+    <!-- Información del producto -->
+    <div class="service-content">
 
-                <!-- Imagen del producto -->
-                <img id="serviceImage" src="" alt="Imagen del producto">
+        <h3>Información del producto</h3>
 
-                <p id="serviceText">
-                Aquí va un poco más de información.
-                </p>
-            </div>
+        <p id="serviceText">
+            Aquí aparecerá la información del producto seleccionado.
+        </p>
 
+    </div>
 
-            <button class="btn" id="backServices">
-                REGRESAR
-            </button>
+    <button class="btn" id="backServices">
+        REGRESAR A PRODUCTOS
+    </button>
 
-        </div>
+</div>
 
     </section>
 
@@ -362,7 +367,6 @@
         </p>
 
     </footer>
-
 
     <!-- Conexión con JavaScript -->
     <script src="script.js"></script>

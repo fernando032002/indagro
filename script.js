@@ -3,9 +3,7 @@
 ========================= */
 
 const menuBtn = document.getElementById("menuBtn");
-
 const nav = document.querySelector(".nav");
-
 
 if (menuBtn && nav) {
 
@@ -24,7 +22,6 @@ if (menuBtn && nav) {
 
 const navLinks = document.querySelectorAll(".nav a");
 
-
 navLinks.forEach(link => {
 
     link.addEventListener("click", () => {
@@ -37,11 +34,13 @@ navLinks.forEach(link => {
 
 });
 
+
 /* =========================
-   SERVICIOS
+   ELEMENTOS DE PRODUCTOS
 ========================= */
 
-const cards = document.querySelectorAll(".card");
+const cards =
+    document.querySelectorAll(".card");
 
 const serviceDetail =
     document.getElementById("serviceDetail");
@@ -52,11 +51,14 @@ const serviceTitle =
 const serviceDescription =
     document.getElementById("serviceDescription");
 
+const serviceImage =
+    document.getElementById("serviceImage");
+
 const serviceText =
     document.getElementById("serviceText");
 
-const serviceImage =
-    document.getElementById("serviceImage");
+const productGallery =
+    document.getElementById("productGallery");
 
 const backServices =
     document.getElementById("backServices");
@@ -75,11 +77,17 @@ const servicios = {
         descripcion:
             "Soluciones para el control y manejo de sistemas eléctricos.",
 
-        imagen:
-            "img/control.jpg",
+        imagenPrincipal:
+            "img/control1.jpeg",
+
+        imagenes: [
+            "img/control1.jpeg",
+            "img/control2.jpeg",
+            "img/control3.jpeg"
+        ],
 
         informacion:
-            "."
+            "Contamos con soluciones para el control eléctrico, instalación, mantenimiento y manejo de sistemas eléctricos."
 
     },
 
@@ -91,11 +99,18 @@ const servicios = {
         descripcion:
             "Servicios relacionados con sistemas de potencia eléctrica.",
 
-        imagen:
+        imagenPrincipal:
             "img/potencia.jpg",
 
+        imagenes: [
+            "img/potencia.jpg",
+            "img/potencia2.jpg",
+            "img/potencia3.jpg"
+        ],
+
         informacion:
-            "."
+            "Ofrecemos soluciones para sistemas de potencia eléctrica, equipos eléctricos y aplicaciones industriales."
+
     },
 
 
@@ -106,11 +121,17 @@ const servicios = {
         descripcion:
             "Soluciones y servicios especializados en sistemas hidráulicos.",
 
-        imagen:
+        imagenPrincipal:
             "img/hidraulica.jpg",
 
+        imagenes: [
+            "img/hidraulica.jpg",
+            "img/hidraulica2.jpg",
+            "img/hidraulica3.jpg"
+        ],
+
         informacion:
-            "."
+            "Trabajamos con sistemas hidráulicos, equipos, componentes y soluciones para diferentes aplicaciones industriales."
 
     },
 
@@ -122,11 +143,17 @@ const servicios = {
         descripcion:
             "Implementación y mejora de sistemas automatizados.",
 
-        imagen:
+        imagenPrincipal:
             "img/automatizacion.jpg",
 
+        imagenes: [
+            "img/automatizacion.jpg",
+            "img/automatizacion2.jpg",
+            "img/automatizacion3.jpg"
+        ],
+
         informacion:
-            "."
+            "Desarrollamos soluciones de automatización para mejorar el funcionamiento, control y eficiencia de los procesos."
 
     },
 
@@ -138,11 +165,17 @@ const servicios = {
         descripcion:
             "Soluciones para sistemas y equipos neumáticos.",
 
-        imagen:
+        imagenPrincipal:
             "img/neumatica.jpg",
 
+        imagenes: [
+            "img/neumatica.jpg",
+            "img/neumatica2.jpg",
+            "img/neumatica3.jpg"
+        ],
+
         informacion:
-            "."
+            "Ofrecemos soluciones para sistemas neumáticos, equipos, componentes y aplicaciones industriales."
 
     }
 
@@ -150,99 +183,224 @@ const servicios = {
 
 
 /* =========================
-   CLIC EN PRODUCTO
+   MOSTRAR DETALLE DEL PRODUCTO
 ========================= */
 
-cards.forEach(card => {
+if (
+    cards.length > 0 &&
+    serviceDetail &&
+    serviceTitle &&
+    serviceDescription &&
+    serviceImage &&
+    serviceText &&
+    productGallery
+) {
 
-    card.addEventListener("click", () => {
+    cards.forEach(card => {
 
-        const servicioSeleccionado =
-            card.dataset.servicio;
+        card.addEventListener("click", () => {
 
-        const servicio =
-            servicios[servicioSeleccionado];
+            const servicioSeleccionado =
+                card.dataset.servicio;
 
-
-        if (!servicio) {
-            return;
-        }
-
-
-        /* TÍTULO */
-
-        serviceTitle.textContent =
-            servicio.titulo;
-
-
-        /* DESCRIPCIÓN */
-
-        serviceDescription.textContent =
-            servicio.descripcion;
+            const servicio =
+                servicios[servicioSeleccionado];
 
 
-        /* INFORMACIÓN */
+            // Verificar que exista el producto
 
-        serviceText.textContent =
-            servicio.informacion;
+            if (!servicio) {
 
+                console.error(
+                    "No existe información para:",
+                    servicioSeleccionado
+                );
 
-        /* IMAGEN */
+                return;
 
-        serviceImage.src =
-            servicio.imagen;
-
-        serviceImage.alt =
-            servicio.titulo;
-
-
-        /* MOSTRAR INFORMACIÓN */
-
-        serviceDetail.style.display =
-            "block";
+            }
 
 
-        /* DESPLAZAR HACIA LA INFORMACIÓN */
+            /* =========================
+               INFORMACIÓN
+            ========================= */
 
-        setTimeout(() => {
+            serviceTitle.textContent =
+                servicio.titulo;
 
-            serviceDetail.scrollIntoView({
+            serviceDescription.textContent =
+                servicio.descripcion;
 
-                behavior: "smooth",
+            serviceText.textContent =
+                servicio.informacion;
 
-                block: "start"
 
-            });
+            /* =========================
+               IMAGEN PRINCIPAL
+            ========================= */
 
-        }, 100);
+            serviceImage.src =
+                servicio.imagenPrincipal;
+
+            serviceImage.alt =
+                servicio.titulo;
+
+
+            /* =========================
+               LIMPIAR GALERÍA
+            ========================= */
+
+            productGallery.innerHTML = "";
+
+
+            /* =========================
+               CREAR GALERÍA
+            ========================= */
+
+            servicio.imagenes.forEach(
+                (imagen, indice) => {
+
+                    const miniatura =
+                        document.createElement("img");
+
+
+                    miniatura.src =
+                        imagen;
+
+
+                    miniatura.alt =
+                        `${servicio.titulo} imagen ${indice + 1}`;
+
+
+                    miniatura.classList.add(
+                        "gallery-image"
+                    );
+
+
+                    /* Primera imagen seleccionada */
+
+                    if (indice === 0) {
+
+                        miniatura.classList.add(
+                            "selected"
+                        );
+
+                    }
+
+
+                    /* =========================
+                       CAMBIAR IMAGEN PRINCIPAL
+                    ========================= */
+
+                    miniatura.addEventListener(
+                        "click",
+                        () => {
+
+                            serviceImage.src =
+                                imagen;
+
+
+                            const miniaturas =
+                                productGallery.querySelectorAll(
+                                    ".gallery-image"
+                                );
+
+
+                            miniaturas.forEach(
+                                img => {
+
+                                    img.classList.remove(
+                                        "selected"
+                                    );
+
+                                }
+                            );
+
+
+                            miniatura.classList.add(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+                    productGallery.appendChild(
+                        miniatura
+                    );
+
+                }
+            );
+
+
+            /* =========================
+               MOSTRAR DETALLE
+            ========================= */
+
+            serviceDetail.style.display =
+                "block";
+
+
+            /* =========================
+               DESPLAZARSE AL DETALLE
+            ========================= */
+
+            setTimeout(() => {
+
+                serviceDetail.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }, 100);
+
+        });
 
     });
 
-});
+}
 
 
 /* =========================
    REGRESAR A PRODUCTOS
 ========================= */
 
-if (backServices) {
+if (
+    backServices &&
+    serviceDetail
+) {
 
-    backServices.addEventListener("click", () => {
+    backServices.addEventListener(
+        "click",
+        () => {
 
-        serviceDetail.style.display =
-            "none";
+            serviceDetail.style.display =
+                "none";
 
 
-        document.getElementById("servicios")
-            .scrollIntoView({
+            const servicesSection =
+                document.getElementById(
+                    "servicios"
+                );
 
-                behavior: "smooth",
 
-                block: "start"
+            if (servicesSection) {
 
-            });
+                servicesSection.scrollIntoView({
 
-    });
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }
+
+        }
+    );
 
 }
 
@@ -252,13 +410,20 @@ if (backServices) {
 ========================= */
 
 const imagenesNosotros =
-    document.querySelectorAll(".carousel-image");
+    document.querySelectorAll(
+        ".carousel-image"
+    );
 
 const botonAnterior =
-    document.getElementById("prevAbout");
+    document.getElementById(
+        "prevAbout"
+    );
 
 const botonSiguiente =
-    document.getElementById("nextAbout");
+    document.getElementById(
+        "nextAbout"
+    );
+
 
 let indiceNosotros = 0;
 
@@ -269,11 +434,15 @@ let indiceNosotros = 0;
 
 function mostrarImagenNosotros(indice) {
 
-    imagenesNosotros.forEach(imagen => {
+    imagenesNosotros.forEach(
+        imagen => {
 
-        imagen.classList.remove("active");
+            imagen.classList.remove(
+                "active"
+            );
 
-    });
+        }
+    );
 
 
     if (imagenesNosotros[indice]) {
@@ -292,24 +461,29 @@ function mostrarImagenNosotros(indice) {
 
 if (botonSiguiente) {
 
-    botonSiguiente.addEventListener("click", () => {
+    botonSiguiente.addEventListener(
+        "click",
+        () => {
 
-        indiceNosotros++;
+            indiceNosotros++;
 
 
-        if (
-            indiceNosotros >=
-            imagenesNosotros.length
-        ) {
+            if (
+                indiceNosotros >=
+                imagenesNosotros.length
+            ) {
 
-            indiceNosotros = 0;
+                indiceNosotros = 0;
+
+            }
+
+
+            mostrarImagenNosotros(
+                indiceNosotros
+            );
 
         }
-
-
-        mostrarImagenNosotros(indiceNosotros);
-
-    });
+    );
 
 }
 
@@ -320,22 +494,27 @@ if (botonSiguiente) {
 
 if (botonAnterior) {
 
-    botonAnterior.addEventListener("click", () => {
+    botonAnterior.addEventListener(
+        "click",
+        () => {
 
-        indiceNosotros--;
+            indiceNosotros--;
 
 
-        if (indiceNosotros < 0) {
+            if (indiceNosotros < 0) {
 
-            indiceNosotros =
-                imagenesNosotros.length - 1;
+                indiceNosotros =
+                    imagenesNosotros.length - 1;
+
+            }
+
+
+            mostrarImagenNosotros(
+                indiceNosotros
+            );
 
         }
-
-
-        mostrarImagenNosotros(indiceNosotros);
-
-    });
+    );
 
 }
 
@@ -344,7 +523,9 @@ if (botonAnterior) {
    CAMBIO AUTOMÁTICO
 ========================= */
 
-if (imagenesNosotros.length > 0) {
+if (
+    imagenesNosotros.length > 0
+) {
 
     setInterval(() => {
 
@@ -361,7 +542,9 @@ if (imagenesNosotros.length > 0) {
         }
 
 
-        mostrarImagenNosotros(indiceNosotros);
+        mostrarImagenNosotros(
+            indiceNosotros
+        );
 
     }, 5000);
 

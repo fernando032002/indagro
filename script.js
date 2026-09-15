@@ -132,7 +132,7 @@ const servicios = {
         ],
 
         informacion:
-            "Trabajamos con sistemas hidráulicos, equipos, componentes y soluciones para diferentes aplicaciones industriales."
+            "Trabajamos con sistemas hidráulicos, equipos, componentes y soluciones."
 
     },
 

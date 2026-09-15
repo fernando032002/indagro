@@ -87,7 +87,7 @@ const servicios = {
         ],
 
         informacion:
-            "Contamos con soluciones para el control eléctrico, instalación, mantenimiento y manejo de sistemas eléctricos."
+            "Contamos con soluciones para su control eléctrico, venta de equipos y componentes, instalación y mantenimiento."
 
     },
 
@@ -100,12 +100,13 @@ const servicios = {
             "Servicios relacionados con sistemas de potencia eléctrica.",
 
         imagenPrincipal:
-            "img/potencia.jpg",
+            "img/potencia1.jpeg",
 
         imagenes: [
-            "img/potencia.jpg",
-            "img/potencia2.jpg",
-            "img/potencia3.jpg"
+            "img/potencia1.jpeg",
+            "img/potencia2.jpeg",
+            "img/potencia3.jpeg",
+            "img/potencia4.jpeg"
         ],
 
         informacion:
@@ -144,11 +145,11 @@ const servicios = {
             "Implementación y mejora de sistemas automatizados.",
 
         imagenPrincipal:
-            "img/automatizacion.jpg",
+            "img/automatizacion1.jpeg",
 
         imagenes: [
-            "img/automatizacion.jpg",
-            "img/automatizacion2.jpg",
+            "img/automatizacion1.jpeg",
+            "img/automatizacion2.jpeg",
             "img/automatizacion3.jpg"
         ],
 

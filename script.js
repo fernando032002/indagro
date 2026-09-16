@@ -550,3 +550,41 @@ if (
     }, 5000);
 
 }
+/* =========================
+   MOSTRAR / OCULTAR CORREOS
+========================= */
+
+const btnCorreos =
+    document.getElementById("btnCorreos");
+
+const correos =
+    document.getElementById("correos");
+
+
+if (btnCorreos && correos) {
+
+    btnCorreos.addEventListener(
+        "click",
+        () => {
+
+            correos.classList.toggle("mostrar");
+
+
+            if (
+                correos.classList.contains("mostrar")
+            ) {
+
+                btnCorreos.textContent =
+                    "OCULTAR CORREOS";
+
+            } else {
+
+                btnCorreos.textContent =
+                    "VER CORREOS";
+
+            }
+
+        }
+    );
+
+}

@@ -254,13 +254,13 @@ body {
 
     padding: 14px 28px;
 
-    background: #37363696;
+    background: #000000f6;
 
     color: #ffffff;
 
     text-decoration: none;
 
-    border: 2px solid #4a4848;
+    border: 2px solid #000000;
 
     border-radius: 8px;
 
@@ -270,15 +270,15 @@ body {
 
     transition: all 0.3s ease;
 
-    box-shadow: 0 8px 20px rgba(49, 48, 48, 0.96);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.96);
 }
 
 .btn:hover {
-    background: #855b9ecd;
+    background: #151582cd;
 
     transform: translateY(-4px);
 
-    box-shadow: 0 12px 25px rgba(29, 29, 29, 0.566);
+    box-shadow: 0 12px 25px rgba(77, 86, 155, 0.652);
 }
 
 
@@ -339,11 +339,8 @@ body {
     min-height: 100vh;
 
     padding: 140px 7% 80px;
-
-    display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
 
     background:
@@ -493,7 +490,7 @@ body {
 ========================= */
 
 .service-detail {
-        display: none;
+    display: none;
 
     max-width: 1000px;
 

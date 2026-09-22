@@ -141,9 +141,9 @@ body {
 ========================= */
 /*logo marca de agua*/
 .hero {
-    min-height: 150vh;
+    min-height: 160vh;
 
-    padding: 140px 7% 80px;
+    padding: 160px 7% 60px;
 
     display: flex;
     align-items: center;
@@ -153,8 +153,8 @@ body {
 
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.711),
-            rgba(255, 255, 255, 0.711)
+            rgba(255, 255, 255, 0.804),
+            rgba(255, 255, 255, 0.804)
         ),
         url("img/logoindagro.png");
 
@@ -171,13 +171,13 @@ body {
     content: "";
 
     position: absolute;
-
+/*tamaño del circulo*/
     width: 300px;
     height: 300px;
 
     border-radius: 50%;
 
-    background: rgba(144, 175, 233, 0.047);
+    background: rgba(131, 176, 243, 0.047);
 
     top: 120px;
     left: 5%;
@@ -187,9 +187,9 @@ body {
     content: "";
 
     position: absolute;
-
-    width: 250px;
-    height: 250px;
+/*tamaño del circulo*/
+    width: 300px;
+    height: 300px;
 
     border-radius: 50%;
 

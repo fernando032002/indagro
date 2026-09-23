@@ -865,8 +865,25 @@ INFORMACION EN PROCESO
 .carousel-button.next {
     right: 15px;
 }
+.card img {
+    width: 145px;
+    height: 145px;
 
+    object-fit: contain;
 
+    display: block;
+
+    transition: 0.4s;
+}
+
+.imagen-valores {
+    text-align: left; /* mueve la imagen hacia la izquierda */
+}
+
+.imagen-valores img {
+    width: 700px;     /* ajusta el tamaño */
+    height: auto;     /* mantiene la proporción */
+}
 /* =========================
    CONTACTO
 ========================= */

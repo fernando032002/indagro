@@ -706,8 +706,42 @@ INFORMACION EN PROCESO
 
 .about {
     background: #ffffff;
+    position: relative;
+    overflow: hidden;
 }
 
+
+/* =========================
+   LOGO - MARCA DE AGUA
+========================= */
+
+.about::before {
+    content: "";
+
+    position: absolute;
+
+    top: 60%;
+    left: 55%;
+
+    transform: translate(-76%, -58%);
+
+    width: 1200px;
+    height: 950px;
+
+    background-image: url("img/logoindagro.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.12;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   CONTENIDO ABOUT ajuste de texto
+========================= */
 
 .about-content {
     max-width: 1200px;
@@ -721,6 +755,9 @@ INFORMACION EN PROCESO
     gap: 70px;
 
     align-items: center;
+
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -734,6 +771,7 @@ INFORMACION EN PROCESO
 
     margin-bottom: 25px;
 }
+
 
 .about h2::after {
     margin-left: 0;
@@ -749,7 +787,6 @@ INFORMACION EN PROCESO
 
     margin-bottom: 20px;
 }
-
 
 /* =========================
    CARRUSEL

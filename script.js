@@ -57,12 +57,8 @@ const serviceImage =
 const serviceText =
     document.getElementById("serviceText");
 
-const productGallery =
-    document.getElementById("productGallery");
-
 const backServices =
     document.getElementById("backServices");
-
 
 /* =========================
    INFORMACIÓN DE PRODUCTOS
@@ -71,7 +67,6 @@ const backServices =
 const servicios = {
 
     control: {
-
         titulo: "CONTROL ELÉCTRICO",
 
         descripcion:
@@ -82,12 +77,9 @@ const servicios = {
 
         informacion:
             "CONTAMOS CON LO NECESARIO PARA EL CONTROL DE TUS EQUIPOS O PROCESOS EN LAS MEJORES MARCAS"
-
     },
 
-
     potencia: {
-
         titulo: "POTENCIA ELÉCTRICA",
 
         descripcion:
@@ -96,21 +88,11 @@ const servicios = {
         imagenPrincipal:
             "img/potencia1.jpeg",
 
-        imagenes: [
-            "img/potencia1.jpeg",
-            "img/potencia2.jpeg",
-            "img/potencia3.jpeg",
-            "img/potencia4.jpeg"
-        ],
-
         informacion:
             "Ofrecemos soluciones para sistemas de potencia eléctrica, equipos eléctricos y aplicaciones industriales."
-
     },
 
-
     hidraulica: {
-
         titulo: "HIDRÁULICA",
 
         descripcion:
@@ -119,20 +101,11 @@ const servicios = {
         imagenPrincipal:
             "img/hidraulica.jpg",
 
-        imagenes: [
-            "img/hidraulica.jpg",
-            "img/hidraulica2.jpg",
-            "img/hidraulica3.jpg"
-        ],
-
         informacion:
             "Trabajamos con sistemas hidráulicos, equipos, componentes y soluciones."
-
     },
 
-
     automatizacion: {
-
         titulo: "AUTOMATIZACIÓN",
 
         descripcion:
@@ -141,20 +114,11 @@ const servicios = {
         imagenPrincipal:
             "img/automatizacion1.jpeg",
 
-        imagenes: [
-            "img/automatizacion1.jpeg",
-            "img/automatizacion2.jpeg",
-            "img/automatizacion3.jpg"
-        ],
-
         informacion:
             "Desarrollamos soluciones de automatización para mejorar el funcionamiento, control y eficiencia de los procesos."
-
     },
 
-
     neumatica: {
-
         titulo: "NEUMÁTICA",
 
         descripcion:
@@ -163,210 +127,95 @@ const servicios = {
         imagenPrincipal:
             "img/neumatica.jpg",
 
-        imagenes: [
-            "img/neumatica.jpg",
-            "img/neumatica2.jpg",
-            "img/neumatica3.jpg"
-        ],
-
         informacion:
             "Ofrecemos soluciones para sistemas neumáticos, equipos, componentes y aplicaciones industriales."
-
     }
 
 };
 
+cards.forEach(card => {
 
-/* =========================
-   MOSTRAR DETALLE DEL PRODUCTO
-========================= */
+    card.addEventListener("click", () => {
 
-if (
-    cards.length > 0 &&
-    serviceDetail &&
-    serviceTitle &&
-    serviceDescription &&
-    serviceImage &&
-    serviceText &&
-    productGallery
-) {
+        const servicioSeleccionado =
+            card.dataset.servicio;
 
-    cards.forEach(card => {
-
-        card.addEventListener("click", () => {
-
-            const servicioSeleccionado =
-                card.dataset.servicio;
-
-            const servicio =
-                servicios[servicioSeleccionado];
+        const servicio =
+            servicios[servicioSeleccionado];
 
 
-            // Verificar que exista el producto
+        /* Verificar que exista */
 
-            if (!servicio) {
+        if (!servicio) {
 
-                console.error(
-                    "No existe información para:",
-                    servicioSeleccionado
-                );
-
-                return;
-
-            }
-
-
-            /* =========================
-               INFORMACIÓN
-            ========================= */
-
-            serviceTitle.textContent =
-                servicio.titulo;
-
-            serviceDescription.textContent =
-                servicio.descripcion;
-
-            serviceText.textContent =
-                servicio.informacion;
-
-
-            /* =========================
-               IMAGEN PRINCIPAL
-            ========================= */
-
-            serviceImage.src =
-                servicio.imagenPrincipal;
-
-            serviceImage.alt =
-                servicio.titulo;
-
-
-            /* =========================
-               LIMPIAR GALERÍA
-            ========================= */
-
-            productGallery.innerHTML = "";
-
-
-            /* =========================
-               CREAR GALERÍA
-            ========================= */
-
-            servicio.imagenes.forEach(
-                (imagen, indice) => {
-
-                    const miniatura =
-                        document.createElement("img");
-
-
-                    miniatura.src =
-                        imagen;
-
-
-                    miniatura.alt =
-                        `${servicio.titulo} imagen ${indice + 1}`;
-
-
-                    miniatura.classList.add(
-                        "gallery-image"
-                    );
-
-
-                    /* Primera imagen seleccionada */
-
-                    if (indice === 0) {
-
-                        miniatura.classList.add(
-                            "selected"
-                        );
-
-                    }
-
-
-                    /* =========================
-                       CAMBIAR IMAGEN PRINCIPAL
-                    ========================= */
-
-                    miniatura.addEventListener(
-                        "click",
-                        () => {
-
-                            serviceImage.src =
-                                imagen;
-
-
-                            const miniaturas =
-                                productGallery.querySelectorAll(
-                                    ".gallery-image"
-                                );
-
-
-                            miniaturas.forEach(
-                                img => {
-
-                                    img.classList.remove(
-                                        "selected"
-                                    );
-
-                                }
-                            );
-
-
-                            miniatura.classList.add(
-                                "selected"
-                            );
-
-                        }
-                    );
-
-
-                    productGallery.appendChild(
-                        miniatura
-                    );
-
-                }
+            console.error(
+                "No existe información para:",
+                servicioSeleccionado
             );
 
-
-            /* =========================
-               MOSTRAR DETALLE
-            ========================= */
-
-            serviceDetail.style.display =
-                "block";
+            return;
+        }
 
 
-            /* =========================
-               DESPLAZARSE AL DETALLE
-            ========================= */
+        /* =========================
+           INFORMACIÓN
+        ========================= */
 
-            setTimeout(() => {
+        serviceTitle.textContent =
+            servicio.titulo;
 
-                serviceDetail.scrollIntoView({
+        serviceDescription.textContent =
+            servicio.descripcion;
 
-                    behavior: "smooth",
+        serviceText.textContent =
+            servicio.informacion;
 
-                    block: "start"
 
-                });
+        /* =========================
+           ÚNICA IMAGEN
+        ========================= */
 
-            }, 100);
+        serviceImage.src =
+            servicio.imagenPrincipal;
 
-        });
+        serviceImage.alt =
+            servicio.titulo;
+
+
+        /* =========================
+           MOSTRAR DETALLE
+        ========================= */
+
+        serviceDetail.style.display =
+            "block";
+
+
+        /* =========================
+           BAJAR AL DETALLE
+        ========================= */
+
+        setTimeout(() => {
+
+            serviceDetail.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "start"
+
+            });
+
+        }, 100);
 
     });
 
-}
+});
 
 
 /* =========================
    REGRESAR A PRODUCTOS
 ========================= */
 
-if (
-    backServices &&
-    serviceDetail
-) {
+if (backServices && serviceDetail) {
 
     backServices.addEventListener(
         "click",
@@ -398,7 +247,6 @@ if (
     );
 
 }
-
 
 /* =========================
    CARRUSEL NOSOTROS

@@ -78,16 +78,10 @@ const servicios = {
             "Soluciones para el control y manejo de sistemas eléctricos.",
 
         imagenPrincipal:
-            "img/control1.jpeg",
-
-        imagenes: [
-            "img/control1.jpeg",
-            "img/control2.jpeg",
-            "img/control3.jpeg"
-        ],
+            "img/info1.png",
 
         informacion:
-            "Contamos con soluciones para su control eléctrico, venta de equipos y componentes, instalación y mantenimiento."
+            "CONTAMOS CON LO NECESARIO PARA EL CONTROL DE TUS EQUIPOS O PROCESOS EN LAS MEJORES MARCAS"
 
     },
 

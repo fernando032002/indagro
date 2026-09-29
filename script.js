@@ -76,7 +76,7 @@ const servicios = {
             "img/info1.png",
 
         informacion:
-            "CONTAMOS CON LO NECESARIO PARA EL CONTROL DE TUS EQUIPOS O PROCESOS EN LAS MEJORES MARCAS"
+            "CONTAMOS CON TODO LO NECESARIO PARA EL CONTROL DE TUS EQUIPOS O PROCESOS EN LAS MEJORES MARCAS"
     },
 
     potencia: {

@@ -138,7 +138,7 @@ body {
 /* =========================
    INICIO / HERO
 ========================= */
-
+/* TAMAÑO DEL INICIO */
 .hero {
     min-height: 160vh;
 
@@ -482,7 +482,7 @@ body {
 
     max-width: 1400px;
 
-    margin: 70px auto 0;
+    margin: 50px auto 0;
 
     padding: 50px;
 
@@ -490,7 +490,7 @@ body {
 
     border: 2px solid #241d22;
 
-    border-radius: 25px;
+    border-radius: 50px;
 
     text-align: center;
 
@@ -505,7 +505,7 @@ body {
 
 .product-main-image {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1100px;
     height: 700px;
 
     margin: 0 auto 25px;

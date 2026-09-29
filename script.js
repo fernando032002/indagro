@@ -193,14 +193,13 @@ cards.forEach(card => {
         /* =========================
            BAJAR AL DETALLE
         ========================= */
-
+/* acomodo de los recuadros*/
         setTimeout(() => {
 
-            serviceDetail.scrollIntoView({
+            window.scrollTo({
+                top: serviceDetail.offsetTop +1050,
 
                 behavior: "smooth",
-
-                block: "start"
 
             });
 

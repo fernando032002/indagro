@@ -45,18 +45,21 @@ h1, h2, h3 {
 /* TÍTULOS DE PRODUCTOS */
 .service-detail h2 {
     font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
     font-weight: 800;
 }
 
 /* DESCRIPCIÓN DE PRODUCTOS */
 .service-detail > p {
     font-family: 'Poppins', sans-serif;
+    font-size: 25px;
     font-weight: 400;
 }
 
 /* INFORMACIÓN DE PRODUCTOS */
 .service-content p {
     font-family: 'Poppins', sans-serif;
+    font-size: 30px;
     font-weight: 400;
 }
 

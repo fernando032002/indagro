@@ -344,7 +344,7 @@ h1, h2, h3 {
 
     margin-bottom: 15px;
 
-    color: #ffffff;
+    color: #1e2083;
 }
 
 .section-title h2::after,
@@ -379,8 +379,8 @@ h1, h2, h3 {
     background:
         linear-gradient(
             135deg,
-            #4b41b4,
-            #982161
+            #7b75bd,
+            #b4658f
         );
 
     position: relative;
@@ -449,7 +449,7 @@ h1, h2, h3 {
     width: 100%;
     height: 6px;
 
-    background: #ad256e;
+    background: #322aa0;
 }
 
 
@@ -486,7 +486,7 @@ h1, h2, h3 {
 }
 
 
-/* información inferior */
+/* información dentro del recuadro y color de texto*/
 
 .card .info-hover {
     position: absolute;
@@ -500,7 +500,7 @@ h1, h2, h3 {
 
     background: rgba(237, 229, 235, 0.95);
 
-    color: #ffffff;
+    color: #202883;
 
     font-size: 14px;
 

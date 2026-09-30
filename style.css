@@ -57,12 +57,13 @@ h1, h2, h3 {
 }
 
 /* INFORMACIÓN DE PRODUCTOS */
+
 .service-content p {
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(36, 51, 152, 0.655);
 }
-
 
 /* =========================
    HEADER
@@ -379,8 +380,8 @@ h1, h2, h3 {
     background:
         linear-gradient(
             135deg,
-            #7b75bd,
-            #b4658f
+            #cb71c8,
+            #7975d6
         );
 
     position: relative;
